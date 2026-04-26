@@ -1847,3 +1847,27 @@ section {
     padding: 20px 18px;
   }
 }
+section h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+section h3 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+section p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+section a {
+  font-size: 14px;
+}
