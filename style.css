@@ -1345,23 +1345,30 @@ body.modal-open {
     display: block;
   }
 
-  .site-menu {
-    position: fixed;
-    top: var(--header-h);
-    left: 0;
-    right: 0;
-    min-height: calc(100svh - var(--header-h));
-    padding: 48px 24px;
-    background: rgba(255,255,255,0.98);
-    border-top: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 26px;
-    transform: translateX(100%);
-    transition: transform 0.28s ease;
-  }
+ .site-menu {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  min-height: calc(100svh - var(--header-h));
+  padding: 48px 24px;
+
+  background: rgba(255,255,255,0.98);
+  border-top: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center; 
+
+  gap: 22px;
+
+  transform: translateX(100%);
+  transition: transform 0.28s ease;
+}
 
   .site-menu.open {
     transform: translateX(0);
