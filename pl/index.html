@@ -364,8 +364,8 @@
 
     <div class="contact-form reveal reveal-delay-1">
       <h3>Wyślij wiadomość</h3>
-      <form name="kontakt" method="POST" data-netlify="true" id="kontakt-form">
-        <input type="hidden" name="form-name" value="kontakt" />
+      <form action="https://api.web3forms.com/submit" method="POST" id="kontakt-form">
+        <input type="hidden" name="access_key" value="d74ef659-0700-4665-b622-69163e8bb919">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Imię i nazwisko *</label>
@@ -388,7 +388,7 @@
         <div class="form-check">
           <input type="checkbox" id="datenschutz" name="datenschutz" required />
           <label for="datenschutz">
-            Przeczytałem/am <a href="#" onclick="openModal('datenschutz-modal'); return false;">politykę prywatności</a> i akceptuję ją. *
+            Przeczytałem/am <a href="datenschutz.html" target="_blank">politykę prywatności</a> i akceptuję ją. *
           </label>
         </div>
         <button type="submit" class="form-submit" id="form-submit-btn">Wyślij wiadomość →</button>
@@ -544,7 +544,7 @@
       btn.disabled = true;
       btn.textContent = 'Wysyłanie…';
       try {
-        const res = await fetch('/', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(new FormData(kontaktForm)).toString()

@@ -365,8 +365,8 @@ individuell kalkuliert</h2>
 
     <div class="contact-form reveal reveal-delay-1">
       <h3>Nachricht senden</h3>
-      <form name="kontakt" method="POST" data-netlify="true" id="kontakt-form">
-        <input type="hidden" name="form-name" value="kontakt" />
+      <form action="https://api.web3forms.com/submit" method="POST" id="kontakt-form">
+        <input type="hidden" name="access_key" value="d74ef659-0700-4665-b622-69163e8bb919">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Name *</label>
@@ -389,7 +389,7 @@ individuell kalkuliert</h2>
         <div class="form-check">
           <input type="checkbox" id="datenschutz" name="datenschutz" required />
           <label for="datenschutz">
-            Ich habe die <a href="#" onclick="openModal('datenschutz-modal'); return false;">Datenschutzerklärung</a> gelesen und akzeptiere sie. *
+            Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere sie. *
           </label>
         </div>
         <button type="submit" class="form-submit" id="form-submit-btn">Nachricht absenden →</button>
@@ -544,7 +544,7 @@ individuell kalkuliert</h2>
       btn.disabled = true;
       btn.textContent = 'Wird gesendet …';
       try {
-        const res = await fetch('/', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(new FormData(kontaktForm)).toString()
